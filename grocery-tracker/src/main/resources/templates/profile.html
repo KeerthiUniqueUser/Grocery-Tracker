@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Profile</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h2>User Profile</h2>
+
+<div>
+    <p><strong>Username:</strong> <span th:text="${user.username}"></span></p>
+    <p><strong>Email:</strong> <span th:text="${user.email}"></span></p>
+    <p><strong>Total Grocery Items:</strong> <span th:text="${itemCount}"></span></p>
+</div>
+
+<hr>
+<a href="/" class="btn">🏠 Dashboard</a>
+<a href="/logout" class="btn">🚪 Logout</a>
+
+</body>
+</html>

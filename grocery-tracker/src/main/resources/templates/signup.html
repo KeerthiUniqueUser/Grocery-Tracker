@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sign Up - Grocery Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            text-align: center;
+            padding-top: 100px;
+        }
+        form {
+            display: inline-block;
+            padding: 25px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        input {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        a {
+            display: block;
+            margin-top: 10px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h2>Create Your Grocery Tracker Account</h2>
+
+    <form th:action="@{/signup}" th:object="${user}" method="post">
+        <input type="text" th:field="*{username}" placeholder="Username" required />
+        <input type="password" th:field="*{password}" placeholder="Password" required />
+        <input type="text" th:field="*{fullName}" placeholder="Full Name" required />
+        <input type="email" th:field="*{email}" placeholder="Email" required />
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <a th:href="@{/login}">Already have an account? Login</a>
+</body>
+</html>
